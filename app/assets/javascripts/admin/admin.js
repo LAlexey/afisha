@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery-ui
 //= require jquery_ujs
+
 //= require twitter/bootstrap
 //= require bootstrap
 
@@ -20,4 +21,6 @@
 //= require sortable_tree/initializer
 
 //= require admin/jquery.simple-dtpicker
+//= require ckeditor/init
+
 //= require admin/common

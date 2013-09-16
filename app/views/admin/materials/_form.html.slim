@@ -1,4 +1,4 @@
 = form.input :title
-= form.input :description
+= form.input :description, as: :ckeditor
 = form.input :publication_date, as: :date_picker
-= form.input :author_id, as: :select, collection: User.all, member_label: :email
+= form.input :author, as: :select, collection: User.all, member_label: :email

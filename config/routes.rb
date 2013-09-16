@@ -1,6 +1,8 @@
 AfishaSibnovostiRu::Application.routes.draw do
+
   devise_for :users
 
+  mount Ckeditor::Engine => '/ckeditor'
   mount TopList::Engine => '/', as: 'top_list'
 
   namespace :admin do
