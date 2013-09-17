@@ -1,0 +1,22 @@
+= javascript_include_tag 'top_list/admin/sort'
+= add_toggling_link('.toggling')
+
+- model_class = @model
+.page-header
+  h1=t '.title', :default => t('article', count: @models.size)
+table.table.table-striped#sortable update_url=1#top_list.admin_top_list_path
+  thead
+    tr
+      th width='32%' = model_class.human_attribute_name(:title)
+      th= model_class.human_attribute_name(:section)
+      th= model_class.human_attribute_name(:published_at)
+      th=t '.actions', :default => t('helpers.actions')
+  tbody
+    - @models.each do |model|
+      tr data-item-id=model.position_id class='item'
+        = model.render_positioned
+        /td= link_to article.title, admin_article_path(article)
+        /td= article.section.title
+        /td
+        /  = link_to t('.edit', :default => t("helpers.links.edit")), edit_admin_article_path(article), :class => 'btn btn-mini'
+        /  = article.top_link_button

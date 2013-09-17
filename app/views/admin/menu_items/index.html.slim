@@ -1,0 +1,8 @@
+- model_class = MenuItem
+h3= model_class.model_name.human
+= link_to new_admin_menu_item_path, class: :btn do
+  | Добавить
+  span.icon-plus
+
+ol.sortable_tree data-max_levels=5 data-rebuild_url=rebuild_admin_menu_items_url
+  = sortable_tree all_menu_items, namespace: 'admin', title: :name

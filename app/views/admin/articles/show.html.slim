@@ -1,0 +1,31 @@
+- model_class = Article
+div class="page-header"
+  h1=t '.title', :default => model_class.model_name.human.titleize
+
+p
+  strong= model_class.human_attribute_name(:title) + ':'
+  br
+  = article.title
+p
+  strong= model_class.human_attribute_name(:description) + ':'
+  br
+  = article.description
+p
+  strong= model_class.human_attribute_name(:publication_date) + ':'
+  br
+  = article.publication_date
+p
+  strong= model_class.human_attribute_name(:type) + ':'
+  br
+  = article.type
+p
+  strong= model_class.human_attribute_name(:author_id) + ':'
+  br
+  = article.author_id
+
+.form-actions
+  = link_to t('.back', :default => t("helpers.links.back")), admin_articles_path, :class => 'btn'
+  '
+  = link_to t('.edit', :default => t("helpers.links.edit")), edit_admin_article_path(article), :class => 'btn'
+  '
+  = link_to t('.destroy', :default => t("helpers.links.destroy")), admin_article_path(article), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'

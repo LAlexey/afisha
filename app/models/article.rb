@@ -1,0 +1,3 @@
+class Article < Material
+
+end

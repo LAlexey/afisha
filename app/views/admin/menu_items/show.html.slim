@@ -1,0 +1,19 @@
+- model_class = MenuItem
+div class="page-header"
+  h1=t '.title', :default => model_class.model_name.human.titleize
+
+p
+  strong= model_class.human_attribute_name(:name) + ':'
+  br
+  = current_menu_item.name
+p
+  strong= model_class.human_attribute_name(:condition) + ':'
+  br
+  = current_menu_item.condition
+
+.form-actions
+  = link_to t('.back', :default => t("helpers.links.back")), admin_menu_items_path, :class => 'btn'
+  '
+  = link_to t('.edit', :default => t("helpers.links.edit")), edit_admin_menu_item_path(current_menu_item), :class => 'btn'
+  '
+  = link_to t('.destroy', :default => t("helpers.links.destroy")), admin_menu_item_path(current_menu_item), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'

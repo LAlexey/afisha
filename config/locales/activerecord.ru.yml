@@ -1,0 +1,30 @@
+ru:
+  activerecord:
+    models:
+      section:
+        zero: нет категорий
+        one: "единственный раздел"
+        few: "%{count} раздела"
+        many: "%{count} разделов"
+        other: "%{count} раздела"
+      article: Статья
+      blog_post: Блог
+    attributes:
+      section:
+        id: Идентификатор
+        title: Заголовок
+      article:
+        id: Идентификатор
+        title: Заголовок
+        description: Содержание
+        created_at: Время создания
+        actions: Действия
+        publication_date: Время публикации
+      blog_post:
+        blog_post_addition: Дополнительные поля
+    errors:
+      models:
+        article:
+          attributes:
+            title:
+              blank: Заголовк не может быть пустым

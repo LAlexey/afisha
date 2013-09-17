@@ -1,0 +1,40 @@
+- model_class = Event
+h3= model_class.model_name.human
+a.btn href="create_place.html"
+  | Добавить
+  span.icon-plus
+hr
+table.table
+  thead
+    tr
+      th= model_class.human_attribute_name(:_id)
+      th= model_class.human_attribute_name(:title)
+      th= model_class.human_attribute_name(:description)
+      th= model_class.human_attribute_name(:r_id)
+      th= model_class.human_attribute_name(:age_restricted)
+      th= model_class.human_attribute_name(:original)
+      th= model_class.human_attribute_name(:aka)
+      th= model_class.human_attribute_name(:year)
+      th= model_class.human_attribute_name(:release_date)
+      th= model_class.human_attribute_name(:director)
+      th= model_class.human_attribute_name(:cast)
+      th= model_class.human_attribute_name(:runtime)
+      th= model_class.human_attribute_name(:url)
+      th= model_class.human_attribute_name(:countries)
+  tbody
+    - @events.each do |event|
+      tr
+        td= event._id
+        td= event.title
+        td= event.description
+        td= event.r_id
+        td= event.age_restricted
+        td= event.original
+        td= event.aka
+        td= event.year
+        td= event.release_date
+        td= event.director
+        td= event.cast
+        td= event.runtime
+        td= event.url
+        td= event.countries

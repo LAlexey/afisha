@@ -1,0 +1,21 @@
+h3 Места / Заведения
+a.btn href="create_place.html"
+  | Добавить
+  span.icon-plus
+hr
+table.table
+  thead
+    tr
+      th #
+      th Полное название
+      th Адрес
+      th Сайт
+  tbody
+    - @places.each do |place|
+      tr
+        td= place.id
+        td= link_to place.title, edit_admin_place_path(place)
+        td= place.address
+        td= place.url
+
+= paginate @places

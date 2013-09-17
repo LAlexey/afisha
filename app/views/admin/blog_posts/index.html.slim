@@ -1,0 +1,31 @@
+- model_class = BlogPost
+div class="page-header"
+  h1=t '.title', :default => model_class.model_name.human(count: decorated_blog_posts.size).titleize
+table class="table table-striped"
+  thead
+    tr
+      th= model_class.human_attribute_name(:id)
+      th= model_class.human_attribute_name(:title)
+      th= model_class.human_attribute_name(:description)
+      th= model_class.human_attribute_name(:publication_date)
+      th= model_class.human_attribute_name(:blog_post_addition)
+      th= model_class.human_attribute_name(:author_id)
+      th= model_class.human_attribute_name(:created_at)
+      th=t '.actions', :default => t("helpers.actions")
+  tbody
+    - decorated_blog_posts.each do |blog_post|
+      tr
+        td= link_to blog_post.id, admin_blog_post_path(blog_post)
+        td= blog_post.title
+        td= blog_post.description
+        td= blog_post.publication_date
+        td= blog_post.additional_info
+        td= blog_post.author_info
+        td=l blog_post.created_at
+        td
+          = link_to t('.edit', :default => t("helpers.links.edit")), edit_admin_blog_post_path(blog_post), :class => 'btn btn-mini'
+          '
+          = link_to t('.destroy', :default => t("helpers.links.destroy")), admin_blog_post_path(blog_post), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger'
+
+= link_to t('.new', :default => t("helpers.links.new")), new_admin_blog_post_path, :class => 'btn btn-primary'
+

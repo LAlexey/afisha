@@ -1,0 +1,11 @@
+- blog_post.build_blog_post_addition unless blog_post.blog_post_addition
+
+= semantic_form_for [:admin, blog_post], :html => { :class => "form-horizontal" } do |f|
+  = f.inputs do
+    = render partial: 'admin/materials/form', object: f
+  = f.semantic_fields_for :blog_post_addition do |addition|
+    = addition.input :emotions
+    = addition.input :section, as: :select, collection: Section.all
+  = f.actions
+  /author_id
+  = link_to t('.cancel', :default => t("helpers.links.cancel")), admin_blog_posts_path, :class => 'btn'

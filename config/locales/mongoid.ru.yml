@@ -1,0 +1,18 @@
+ru:
+  mongoid:
+    models:
+      category:
+        zero: нет категорий
+        one: "%{count} категория"
+        few: "%{count} категории"
+        many: "%{count} категорий"
+        other: "%{count} категории"
+    attributes:
+      category:
+        name: название
+#    errors:
+#      models:
+#        category:
+#          attributes:
+#            name:
+#              blank: Имя не может быть пустым

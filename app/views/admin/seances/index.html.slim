@@ -1,0 +1,26 @@
+- model_class = Seance
+h3= model_class.model_name.human
+a.btn href="create_place.html"
+  | Добавить
+  span.icon-plus
+hr
+table.table
+  thead
+    tr
+      th= model_class.human_attribute_name(:_id)
+      th= model_class.human_attribute_name(:date_start)
+      th= model_class.human_attribute_name(:date_finish)
+      th= model_class.human_attribute_name(:times)
+      th= model_class.human_attribute_name(:format)
+      th= model_class.human_attribute_name(:event_id)
+      th= model_class.human_attribute_name(:place_id)
+  tbody
+    - @seances.each do |seance|
+      tr
+        td= seance._id
+        td= seance.date_start
+        td= seance.date_finish
+        td= seance.times
+        td= seance.format
+        td= seance.event_id
+        td= seance.place_id

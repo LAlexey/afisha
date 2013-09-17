@@ -1,0 +1,6 @@
+= semantic_form_for [:admin, article], :html => { :class => "form-horizontal" } do |f|
+  = f.inputs do
+    = render partial: 'admin/materials/form', object: f
+  = f.actions
+  /author_id
+  = link_to t('.cancel', :default => t("helpers.links.cancel")), admin_articles_path, :class => 'btn'
