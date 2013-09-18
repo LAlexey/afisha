@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130917084649) do
+ActiveRecord::Schema.define(:version => 20130918050812) do
 
   create_table "blog_post_additions", :force => true do |t|
     t.string  "emotions"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(:version => 20130917084649) do
     t.datetime "created_at",                     :null => false
     t.datetime "updated_at",                     :null => false
     t.string   "author_id",        :limit => 24
+    t.integer  "lock_version"
   end
 
   add_index "materials", ["type"], :name => "index_materials_on_type"

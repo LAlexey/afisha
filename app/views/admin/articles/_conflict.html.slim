@@ -1,0 +1,11 @@
+.conflict
+  | Внимание, кто то уже отредактировал эту запись!
+p
+  label
+    = radio_button_tag 'conflict_resolution', 'overwrite'
+    | Перезаписать
+  br
+  label
+    = radio_button_tag 'conflict_resolution', 'cancel'
+    | Отменить изменения
+p= submit_tag 'Сохранить'

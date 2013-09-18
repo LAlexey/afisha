@@ -25,6 +25,7 @@ html lang="en"
         });
 
   body
+    = bootstrap_flash
     = nav_bar brand: 'Афиша', brand_link: '/admin', fixed: :top, inverse: true do
       = menu_group class: 'foo', id: 'menu' do
         - menu_items.each do |item|
